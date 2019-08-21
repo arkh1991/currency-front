@@ -1,7 +1,14 @@
-import {BlockContainerInnerWrapper, ColumnContainer, RowContainer} from "../../../../baseComponents/containers";
+import {BlockContainerInnerWrapper, ColumnContainer, RowContainer} from "../../../../components/baseComponents/containers";
 import styled from "styled-components";
 import BackgroundImage from "../../../../resources/img/main-bg.png";
+import {SubTitleLabel} from "../../../../components/baseComponents/labels";
 
+export const AppNameRow = styled(RowContainer)`
+    align-items: center;
+`;
+export const AppName = styled(SubTitleLabel)`
+    margin-right: 25px;
+`;
 export const MainBlockInfoArea = styled(ColumnContainer)`
     height: 910px;
     justify-content: space-between;

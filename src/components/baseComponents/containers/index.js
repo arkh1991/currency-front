@@ -19,3 +19,9 @@ export const BlockContainer = styled.div`
 export const BlockContainerInnerWrapper = styled.div`
  padding: 32px 255px;
  `
+
+export const ShadowContainer  = styled.div``;
+
+export const JustifyCenterContainer = styled.div`
+display: flex;
+justify-content: center;`;

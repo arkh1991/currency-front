@@ -2,7 +2,7 @@ export const settings = {
     language: {
         RUSSIAN: {
             name: "Русский",
-            code: "rus"
+            code: "rus",
         },
         ENGLISH: {
             name: "English",

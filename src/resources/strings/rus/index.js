@@ -8,5 +8,4 @@ export const values = {
     MAIN_BLOCK_CAPTION_TEXT: "Получить бесплатную инструкцию",
     MAIN_BLOCK_NAVIGATION_FEATURES: "Приемущества",
     MAIN_BLOCK_NAVIGATION_PRICE: "Стоимость"
-
 }

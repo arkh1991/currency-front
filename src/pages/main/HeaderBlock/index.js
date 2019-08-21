@@ -1,31 +1,43 @@
-import React from "react";
-import {useState} from "react"
-import {BlockContainer, RowContainer} from "../../../baseComponents/containers";
-import {CaptionText, SmallText, SubTitleLabel, Text, TitleLabel} from "../../../baseComponents/labels";
-import {values} from "../../../resources/strings/rus";
+import React, {useState} from "react";
+import {BlockContainer, RowContainer} from "../../../components/baseComponents/containers";
+import {CaptionText, SmallText, Text, TitleLabel} from "../../../components/baseComponents/labels";
 import {
+    AppName,
+    AppNameRow,
     ButtonWrapper,
     InputWrapper,
     MainBlockEmailInputArea,
     MainBlockImageArea,
     MainBlockInfoArea,
     MainBlockInnerWrapper,
-    MainBlockMessageArea, MainBlockNavigationArea, NavigationLinkContainer
+    MainBlockMessageArea,
+    MainBlockNavigationArea,
+    NavigationLinkContainer
 } from "./styled";
-import {BaseButton, BaseInput} from "../../../baseComponents/controls";
+import {BaseButton, BaseInput} from "../../../components/baseComponents/controls";
+import {LanguagePicker} from "../../../components/LanguagePicker";
+import {useDispatch, useSelector} from "react-redux";
+import {setLanguage} from "../../../redux/actions/settings";
+import {selectLanguageAsset} from "../../../redux/selectors/settingsReducer";
 
 const HeaderBlock = () => {
 
     const [email, changeEmail] = useState("");
+    const dispatch = useDispatch();
+    const values = useSelector(selectLanguageAsset);
 
     return (
         <BlockContainer>
             <RowContainer>
                 <MainBlockInnerWrapper>
                     <MainBlockInfoArea>
-                        <SubTitleLabel>
-                            {values.APP_NAME}
-                        </SubTitleLabel>
+                        <AppNameRow>
+                            <AppName>
+                                {values.APP_NAME}
+                            </AppName>
+                            <LanguagePicker options={["rus", "en"]}
+                                            handleValueChanged={(code) => dispatch(setLanguage(code))}/>
+                        </AppNameRow>
                         <MainBlockMessageArea>
                             <TitleLabel>
                                 {values.MAIN_BLOCK_TITLE}
